@@ -1,0 +1,29 @@
+
+
+<center>
+  <h1>Repositories Listing</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Owner</th>
+    <th colspan="3">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @repositories.each do |repo| %>
+    <tr>
+      <td><%= link_to repo.name , repository_path(repo) %>| </td>
+      <td><%= repo.description %>| </td>
+      <td><%= repo.owner %></td>
+      <td><%= link_to 'Show', repository_path(repo) %></td>
+      <td><%= link_to 'edit', edit_repository_path(repo) %></td>
+      <td><%= link_to 'Delete', repository_path(repo), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Create a repository', new_repository_path %> | <%= link_to 'Crate new User', users_path %>
+</center>

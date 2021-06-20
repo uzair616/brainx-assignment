@@ -1,0 +1,8 @@
+<% if obj.errors.any? %>
+  <h2>The following errors preventing <%= obj.class.name %> for being save</h2>
+  <ul>
+    <% obj.errors.full_messages.each do |mgs| %>
+      <li><%= mgs %></li>
+    <% end %>
+  </ul>
+<% end %>

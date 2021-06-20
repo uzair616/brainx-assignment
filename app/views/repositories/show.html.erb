@@ -1,0 +1,12 @@
+<center>
+<h1>Details of Repository</h1>
+<p><strong>Name: </strong><%= @repository.name %></p>
+<p><strong>Description: </strong><%= @repository.description %></p>
+<p><strong>Owner: </strong><%= @repository.users.each do |user| %>
+                           <%= user.first_name %>
+                           <% end %>
+    </p>
+
+<%= link_to 'Edit', edit_repository_path(@repository) %> |
+<%= link_to 'Back to Repositories Listing', root_path %>
+</center>
